@@ -1,5 +1,9 @@
 <?php 
 require_once(__DIR__. '/include/outils.php');
 template('header');
-// include('nav.view.php');
+    template('nav');
+    template('sidebar');
+    
 template('footer');
+
+
