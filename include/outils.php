@@ -6,7 +6,7 @@ init_session();
 
 require_once('config.php');
 require_once('basedonner.php');
-require_once('Acteur.php');
+require_once('Acteurs.php');
 
 // dump and die
 function dd($var)
