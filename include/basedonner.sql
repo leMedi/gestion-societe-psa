@@ -1,0 +1,4 @@
+DROP DATABASE spa;
+CREATE DATABASE spa;
+USE spa;
+
