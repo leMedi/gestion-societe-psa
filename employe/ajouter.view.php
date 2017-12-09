@@ -27,8 +27,8 @@ require_once(__DIR__. '/../include/outils.php');
             )
         )); ?>
     
-        <div class="content">
-            <div class="container-fluid">
+        <div class="app-content content container-fluid">
+            <div class="content-wrapper">
                 <div class="row">
                 <div class="col-md-8">
                     <div class="card">

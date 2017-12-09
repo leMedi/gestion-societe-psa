@@ -36,9 +36,9 @@ require __DIR__. '/../include/outils.php';
 
     
     
-        <div class="content" style="
+        <div class="app-content content container-fluid" style="
             margin-bottom: 300px;" >
-            <div class="container-fluid">
+            <div class="content-wrapper">
                <div class="row">
                     <div class="col-md-12">
                         <div class="card">
