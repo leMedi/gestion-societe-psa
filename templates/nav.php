@@ -1,4 +1,4 @@
-<nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
+
   <div class="navbar-wrapper">
     <div class="navbar-header">
       <ul class="nav navbar-nav">
@@ -99,4 +99,3 @@
       </div>
     </div>
   </div>
-</nav>

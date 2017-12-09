@@ -1,7 +1,7 @@
 <!-- main menu-->
-<div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
 
-<div class="main-menu-header">
+
+  <div class="main-menu-header">
     <input type="text" placeholder="Search" class="menu-search form-control round" />
   </div> <!-- / main menu header-->
   
@@ -17,4 +17,3 @@
 
     </ul>
   </div> <!-- /main menu content-->
-</div> <!-- / main menu-->
