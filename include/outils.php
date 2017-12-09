@@ -26,6 +26,10 @@ function lien($lien)
     return site . $lien;
 }
 
+function asset($path) {
+    return lien('/public/' . $path);
+}
+
 // verifie si un lien contient un string
 function lienContient($path = null)
 {
