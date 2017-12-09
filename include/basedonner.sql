@@ -13,3 +13,16 @@ CREATE TABLE client(
    password VARCHAR (30)    NOT NULL,
    PRIMARY KEY (id)
 );
+
+CREATE TABLE employe(
+   id         int           NOT NULL     AUTO_INCREMENT,
+   nom      VARCHAR (20)    NOT NULL,
+   prenom   VARCHAR (20)    NOT NULL,
+   tel      INT             NOT NULL,
+   address  VARCHAR (40)    NOT NULL,
+   email    VARCHAR (100)   NOT NULL CHECK (email LIKE '%_@__%.__%'),
+   departement  VARCHAR (100)             NOT NULL,
+   est_chefdep BOOLEAN         NOT NULL default 0,
+   password VARCHAR (30)    NOT NULL,
+   PRIMARY KEY (id)
+);
