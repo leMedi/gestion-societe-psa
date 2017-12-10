@@ -12,18 +12,23 @@ function ancient($cle)
 
 ?>
 
+
 <?php
-    template('header');
+    template('header', array(
+        'path' => '../'
+    ));
 ?>
 
+<div class="wrapper">
+    <div class="sidebar" data-color="blue" data-image="../public/img/sidebar-5.jpg">
+        <?php template('sidebar'); ?> 
+    </div> <!-- .sidebar -->
 
-<div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
-    <?php template('sidebar'); ?> 
-</div> <!-- / main menu-->
-
-<nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
-    <?php template('nav'); ?> 
-</nav>
+    <div class="main-panel">
+        <?php template('nav', array(
+            'title' => 'Employees',
+            
+        )); ?>
     
     <div class="content">
     <div class="container-fluid">
