@@ -1,10 +1,6 @@
 <?php
 
 require __DIR__. '/../include/outils.php';
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 // $employers = new Employers();
 // $employers = $employers->tous();
 
@@ -13,27 +9,17 @@ require __DIR__. '/../include/outils.php';
 
 
 <?php
-    template('header', array(
-        'path' => '../'
-    ));
+    template('header');
 ?>
 
-<div class="wrapper">
-    <div class="sidebar" data-color="blue">
-        <?php template('sidebar'); ?> 
-    </div> <!-- .sidebar -->
 
-    <div class="main-panel">
-        <?php template('nav', array(
-            'title' => 'Commandes',
-            'actions' => array(
-                array(
-                    'nom'   => 'Ajouter',
-                    'icon'  => 'fa fa-plus',
-                    'lien'  => '/Commande/ajouter.php'
-                )
-            )
-        )); ?> 
+<div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
+    <?php template('sidebar'); ?> 
+</div> <!-- / main menu-->
+
+<nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
+    <?php template('nav'); ?> 
+</nav>
 
     
     
