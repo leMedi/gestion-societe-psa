@@ -40,20 +40,20 @@ require_once(__DIR__. '/../include/outils.php');
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
 
-                        <form class="form">
+                        <form class="form" method="POST">
                             <div class="form-body">
                                 <h4 class="form-section"><i class="icon-eye6"></i> A propos d'Employer</h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="nom" class="sr-only">Nom</label>
-                                            <input type="text" id="nom" class="form-control" placeholder="Nom" name="nom">
+                                            <input type="text" id="nom" class="form-control" placeholder="Nom" name="employe[nom]">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="prenom" class="sr-only">Prenom</label>
-                                            <input type="text" id="prenom" class="form-control" placeholder="Prenom" name="prenom">
+                                            <input type="text" id="prenom" class="form-control" placeholder="Prenom" name="employe[prenom]">
                                         </div>
                                     </div>
                                 </div>
@@ -61,13 +61,13 @@ require_once(__DIR__. '/../include/outils.php');
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="email" class="sr-only">Email</label>
-                                            <input type="email" id="email" class="form-control" placeholder="Email" name="email">
+                                            <input type="email" id="email" class="form-control" placeholder="Email" name="employe[email]">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="password" class="sr-only">Mot de passe</label>
-                                            <input type="text" id="password" class="form-control" placeholder="Mot de passe" name="password">
+                                            <input type="password" id="password" class="form-control" placeholder="Mot de passe" name="employe[password]">
                                         </div>
                                     </div>
                                 </div>
@@ -75,17 +75,22 @@ require_once(__DIR__. '/../include/outils.php');
                                 <h4 class="form-section"><i class="icon-paper"></i>Plus d'info</h4>
 
                                 <div class="form-group">
+                                    <label for="userinput18" class="sr-only">adresse</label>
+                                    <input class="form-control" type="text" placeholder="adresse" id="userinput18" name="employe[address]">
+                                </div>
+
+                                <div class="form-group">
                                     <label for="userinput5" class="sr-only">tel</label>
-                                    <input class="form-control" type="email" placeholder="tel" id="userinput5">
+                                    <input class="form-control" type="text" placeholder="tel" id="userinput5" name="employe[tel]">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="userinput6" class="sr-only">departement</label>
-                                    <input class="form-control" type="url" placeholder="departement" id="userinput6">
+                                    <input class="form-control" type="text" placeholder="departement" id="userinput6" name="employe[departement]">
                                 </div>
 
                                 <div class="form-group">
-                                <select name="employe[admin]" class="form-control">
+                                <select name="employe[est_chefdep]" class="form-control">
                                 <option value="1">Chef de Projet</option>
                                 <option value="0">N'est pas Chef de Projet</option>
                             </select>
@@ -95,7 +100,7 @@ require_once(__DIR__. '/../include/outils.php');
 
                             <div class="form-actions right">
                                 <button type="button" class="btn btn-outline-warning mr-1">
-                                    <i class="icon-cross2"></i> Anuuler
+                                    <i class="icon-cross2"></i> Annuler
                                 </button>
                                 <button type="submit" class="btn btn-outline-primary">
                                     <i class="icon-check2"></i> Ajouter
@@ -111,7 +116,5 @@ require_once(__DIR__. '/../include/outils.php');
     </div>
 </div> <!-- .content -->
 <?php
-    template('footer', array(
-        'path' => '../'
-    ));
+    template('footer');
 ?>
