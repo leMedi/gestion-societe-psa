@@ -14,7 +14,7 @@ CREATE TABLE clients(
    PRIMARY KEY (id)
 );
 
-CREATE TABLE employe(
+CREATE TABLE employers(
    id         int           NOT NULL     AUTO_INCREMENT,
    nom      VARCHAR (20)    NOT NULL,
    prenom   VARCHAR (20)    NOT NULL,

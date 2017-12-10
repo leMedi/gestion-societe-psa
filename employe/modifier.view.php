@@ -7,10 +7,15 @@ function ancient($cle)
     if($employe && array_key_exists($cle, $employe))
         return $employe[$cle];
     else
-        return '';
+        return 'zz';
 }
 
 ?>
+
+
+
+
+
 
 <?php
     template('header');
@@ -25,98 +30,121 @@ function ancient($cle)
     <?php template('nav'); ?> 
 </nav>
     
-    <div class="content">
-    <div class="container-fluid">
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
         <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Ajouter un Employee</h4>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Modifier un Employer</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                            <li><a data-action="close"><i class="icon-cross2"></i></a></li>
+                        </ul>
                     </div>
-                    <div class="content">
-                        <form method="POST">
-                        <input name="employe[id]" value="<?= $employe['id'] ?>" type="text" HIDDEN>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="card-block">
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Nom</label>
-                                        <input name="employe[nom]" value="<?= ancient('nom') ?>" type="text" class="form-control">
-                                        </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Prenom</label>
-                                        <input name="employe[prenom]" value="<?= ancient('prenom') ?>" type="text" class="form-control">
-                                        </div>
-                                </div>
-                            </div> <!-- .row -->
+                        <div class="card-text">
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Telephone</label>
-                                        <input name="employe[tel]" value="<?= ancient('tel') ?>" type="number" class="form-control">
-                                        </div>
-                                </div>
-                            </div> <!-- .row -->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>E-m@il</label>
-                                        <input name="employe[email]" value="<?= ancient('email') ?>" type="text" class="form-control">
-                                        </div>
-                                </div>
-                            </div> <!-- .row -->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Addresse </label>
-                                        <input name="employe[address]" value="<?= ancient('address') ?>" type="text" class="form-control">
-                                        </div>
-                                </div>
-                            </div> <!-- .row -->
-                            <div class="row">
-                                    <div class="col-md-12">
+                        <form class="form" method="POST">
+                            <input name="employe[id]" value="<?= ancient('id') ?>" type="number" hidden>
+                            <div class="form-body">
+                                <h4 class="form-section"><i class="icon-eye6"></i> A propos d'Employer</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Salaire</label>
-                                            <div class="input-group">
-                                            <input name="employe[salaire]" value="<?= ancient('salaire') ?>" type="int" class="form-control">
-                                            <div class="input-group-addon">DH</div>
-                                            </div>
+                                            <label for="nom" class="sr-only">Nom</label>
+                                            <input type="text" id="nom" class="form-control" placeholder="Nom" value="<?= ancient('nom') ?>" name="employe[nom]">
                                         </div>
                                     </div>
-                            </div> <!-- .row -->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label> Password </label>
-                                        <input name="employe[password]" value="<?= ancient('password') ?>" type="password" class="form-control">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="prenom" class="sr-only">Prenom</label>
+                                            <input type="text" id="prenom" class="form-control" placeholder="Prenom" value="<?= ancient('prenom') ?>" name="employe[prenom]">
                                         </div>
+                                    </div>
                                 </div>
-                            </div> <!-- .row -->
-                            <div class="row">  
-                                <div class="col-md-9">
-                                    <select name="employe[admin]" class="form-control" value="<?= ancient('admin') ?>">
-                                        <option value="1">Administrateur</option>
-                                        <option value="0">N'est pas administrateur</option>
-                                    </select>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email" class="sr-only">Email</label>
+                                            <input type="email" id="email" class="form-control" placeholder="Email" value="<?= ancient('email') ?>" name="employe[email]">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="password" class="sr-only">Mot de passe</label>
+                                            <input type="password" id="password" class="form-control" placeholder="Mot de passe" value="<?= ancient('password') ?>" name="employe[password]">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <button type="submit" class="btn btn-info btn-fill pull-right">Enregistrer</button>
-                                    <div class="clearfix"></div>
+
+                                <h4 class="form-section"><i class="icon-paper"></i>Plus d'info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput18" class="sr-only">adresse</label>
+                                    <input class="form-control" type="text" placeholder="adresse" id="userinput18" value="<?= ancient('address') ?>" name="employe[address]">
                                 </div>
-                            </div> <!-- .row -->
-                            
+
+                                <div class="form-group">
+                                    <label for="userinput5" class="sr-only">tel</label>
+                                    <input class="form-control" type="text" placeholder="tel" id="userinput5" value="<?= ancient('tel') ?>" name="employe[tel]">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput6" class="sr-only">departement</label>
+                                    <input class="form-control" type="text" placeholder="departement" id="userinput6" value="<?= ancient('departement') ?>" name="employe[departement]">
+                                </div>
+
+                                <div class="form-group">
+                                <select name="employe[est_chefdep]" class="form-control">
+                                <option value="1">Chef de Projet</option>
+                                <option value="0">N'est pas Chef de Projet</option>
+                            </select>
+                                </div>
+
+                            </div>
+
+                            <div class="form-actions right">
+                                <button type="button" class="btn btn-outline-warning mr-1">
+                                    <i class="icon-cross2"></i> Annuler
+                                </button>
+                                <button type="submit" class="btn btn-outline-primary">
+                                    <i class="icon-check2"></i> Ajouter
+                                </button>
+                            </div>
                         </form>
-                    </div> <!-- .content -->
-                </div> <!-- .card -->
-            </div> <!-- .col -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 </div> <!-- .content -->
 <?php
-    template('footer', array(
-        'path' => '../'
-    ));
+    template('footer');
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
