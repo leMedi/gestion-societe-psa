@@ -20,7 +20,7 @@ $clients = Client::tous();
     <?php template('nav', array(
         'actions' => array(
             array(
-                'link'  => lien('/clints/ajouter.php'),
+                'link'  => lien('/clients/ajouter.php'),
                 'text'  => 'ajouter',
                 'color' => 'success' 
             )

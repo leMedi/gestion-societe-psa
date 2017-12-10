@@ -34,6 +34,16 @@
               <i class="ficon icon-expand2"></i>
             </a>
           </li>
+          <?php
+            if(isset($actions))
+              foreach ($actions as $action) :
+          ?>
+          <li class="nav-item">
+            <a href="<?= $action['link'] ?>" class="nav-link btn mr-1 mt-1 white btn-<?= $action['color'] ?>"><?= $action['text'] ?></a>
+          </li>
+          <?php
+            endforeach;
+          ?>
         </ul>
 
         <ul class="nav navbar-nav float-xs-right">
