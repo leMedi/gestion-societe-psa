@@ -108,7 +108,5 @@ require __DIR__. '/../include/outils.php';
             </div>
         </div> <!-- .content -->
 <?php
-    template('footer', array(
-        'path' => '../'
-    ));
+    template('footer');
 ?>
