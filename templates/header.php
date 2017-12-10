@@ -18,24 +18,24 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="<?= lien('/public/css/bootstrap.css') ?>">
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
     <!-- font icons-->
-    <link rel="stylesheet" type="text/css" href="<?= lien('/public/fonts/icomoon.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= lien('/public/fonts/flag-icon-css/css/flag-icon.min.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= lien('/public/vendors/css/extensions/pace.css') ?>">
+    <link rel="stylesheet" type="text/css" href="../public/fonts/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="../public/fonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="../public/vendors/css/extensions/pace.css">
     <!-- END VENDOR CSS-->
     <!-- BEGIN ROBUST CSS-->
-    <link rel="stylesheet" type="text/css" href="<?= lien('/public/css/bootstrap-extended.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= lien('/public/css/app.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= lien('/public/css/colors.css') ?>">
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/app.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/colors.css">
     <!-- END ROBUST CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="<?= lien('/public/css/core/menu/menu-types/vertical-menu.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= lien('/public/css/core/menu/menu-types/vertical-overlay-menu.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= lien('/public/css/core/colors/palette-gradient.css') ?>">
+    <link rel="stylesheet" type="text/css" href="../public/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/core/menu/menu-types/vertical-overlay-menu.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/core/colors/palette-gradient.css">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="<?= lien('/public/css/style.css') ?>">
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
     <!-- END Custom CSS-->
   </head>
   <body data-open="click" data-menu="vertical-menu" data-col="2-columns" class="vertical-layout vertical-menu 2-columns  fixed-navbar">
