@@ -17,7 +17,15 @@ $clients = Client::tous();
 </div> <!-- / main menu-->
 
 <nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
-    <?php template('nav'); ?> 
+    <?php template('nav', array(
+        'actions' => array(
+            array(
+                'link'  => lien('/clints/ajouter.php'),
+                'text'  => 'ajouter',
+                'color' => 'success' 
+            )
+        )
+    )); ?> 
 </nav>
 
     
