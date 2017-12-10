@@ -1,7 +1,10 @@
 <?php
 
 require __DIR__. '/../include/outils.php';
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 // $employers = new Employers();
 // $employers = $employers->tous();
 
