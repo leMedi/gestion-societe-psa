@@ -1,9 +1,6 @@
 <?php
 
 require __DIR__. '/../include/outils.php';
-
-
-
 // $employers = new Employers();
 // $employers = $employers->tous();
 
@@ -18,18 +15,18 @@ require __DIR__. '/../include/outils.php';
 ?>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="blue" data-image="../public/img/sidebar-5.jpg">
+    <div class="sidebar" data-color="blue">
         <?php template('sidebar'); ?> 
     </div> <!-- .sidebar -->
 
     <div class="main-panel">
         <?php template('nav', array(
-            'title' => 'Employers',
+            'title' => 'Commandes',
             'actions' => array(
                 array(
                     'nom'   => 'Ajouter',
                     'icon'  => 'fa fa-plus',
-                    'lien'  => '/Employe/ajouter.php'
+                    'lien'  => '/Commande/ajouter.php'
                 )
             )
         )); ?> 
@@ -43,7 +40,7 @@ require __DIR__. '/../include/outils.php';
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Employers</h4>
+                                <h4 class="card-title">Commande</h4>
                                 <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -57,13 +54,11 @@ require __DIR__. '/../include/outils.php';
                                     <table class="table table-hover mb-0">
                                         <thead>
                                             <tr>
-                                                <th>Nom</th>
-                                                <th>Prenom</th>
-                                                <th>tel</th>
-                                                <th>address</th>
-                                                <th>email</th>
-                                                <th>departement</th>
-                                                <th>chef de Projet</th>
+                                                <th>Numero De Commande</th>
+                                                <th>Date De Commande</th>
+                                                <th>Date De Livraison</th>
+                                                <th>Client</th>
+                                                <th>Chef de Projet</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -73,8 +68,8 @@ require __DIR__. '/../include/outils.php';
                                                 <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
                                                 <td class="text-truncate">10/05/2016</td>
                                                 <td class="text-truncate">$ 1200.00</td>
-                                                <td class="text-truncate">info</td>
-                                                <td class="text-truncate">oui</td>                                        
+                                                
+                                                                                        
                                             </tr>
                                             <tr>
                                                 <td class="text-truncate"><a href="#">INV-001012</a></td>
@@ -82,8 +77,8 @@ require __DIR__. '/../include/outils.php';
                                                 <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
                                                 <td class="text-truncate">20/07/2016</td>
                                                 <td class="text-truncate">$ 152.00</td>
-                                                <td class="text-truncate">info</td>
-                                                <td class="text-truncate">oui</td> 
+                                                
+                                                 
                                             </tr>
                                             <tr>
                                                 <td class="text-truncate"><a href="#">INV-001401</a></td>
@@ -91,8 +86,8 @@ require __DIR__. '/../include/outils.php';
                                                 <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
                                                 <td class="text-truncate">16/11/2016</td>
                                                 <td class="text-truncate">$ 1450.00</td>
-                                                <td class="text-truncate">info</td>
-                                                <td class="text-truncate">oui</td> 
+                                                
+                                                 
                                             </tr>
                                             <tr>
                                                 <td class="text-truncate"><a href="#">INV-01112</a></td>
@@ -100,8 +95,8 @@ require __DIR__. '/../include/outils.php';
                                                 <td class="text-truncate"><span class="tag tag-default tag-warning">Overdue</span></td>
                                                 <td class="text-truncate">11/12/2016</td>
                                                 <td class="text-truncate">$ 5685.00</td>
-                                                <td class="text-truncate">info</td>
-                                                <td class="text-truncate">oui</td> 
+                                                
+                                                 
                                             </tr>
                                             <tr>
                                                 <td class="text-truncate"><a href="#">INV-008101</a></td>
@@ -109,8 +104,8 @@ require __DIR__. '/../include/outils.php';
                                                 <td class="text-truncate"><span class="tag tag-default tag-warning">Overdue</span></td>
                                                 <td class="text-truncate">18/05/2016</td>
                                                 <td class="text-truncate">$ 685.00</td>
-                                                <td class="text-truncate">info</td>
-                                                <td class="text-truncate">oui</td> 
+                                                
+                                                 
                                             </tr>
                                         </tbody>
                                     </table>

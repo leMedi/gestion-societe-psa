@@ -4,11 +4,11 @@ require_once( __DIR__. '/../include/outils.php');
 
 $errors = "";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["employe"])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["commande"])) {
     
-    $employers = new Employers($_POST["employe"]);
+    $commande = new commande($_POST["commande"]);
 
-    $result = $employers->enregistrer();
+    $result = $commande->enregistrer();
 
     if($result === true)
         header('Location:index.php');
