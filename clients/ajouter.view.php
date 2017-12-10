@@ -22,7 +22,7 @@ require_once(__DIR__. '/../include/outils.php');
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Ajouter un Employer</h4>
+                    <h4 class="card-title">Ajouter un Clients</h4>
                     <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                     <div class="heading-elements">
                         <ul class="list-inline mb-0">
@@ -37,23 +37,23 @@ require_once(__DIR__. '/../include/outils.php');
                     <div class="card-block">
 
                         <div class="card-text">
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <p class="card-text">Remplire le formulaire pour le nouveau clients</p>
                         </div>
 
                         <form class="form" method="POST">
                             <div class="form-body">
-                                <h4 class="form-section"><i class="icon-eye6"></i> A propos d'Employer</h4>
+                                <h4 class="form-section"><i class="icon-eye6"></i> A propos du Clients</h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="nom" class="sr-only">Nom</label>
-                                            <input type="text" id="nom" class="form-control" placeholder="Nom" name="employe[nom]">
+                                            <input name="client[nom]" type="text" class="form-control" placeholder="Nom">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="prenom" class="sr-only">Prenom</label>
-                                            <input type="text" id="prenom" class="form-control" placeholder="Prenom" name="employe[prenom]">
+                                            <input name="client[prenom]" type="text" class="form-control" placeholder="Prenom">
                                         </div>
                                     </div>
                                 </div>
@@ -61,46 +61,40 @@ require_once(__DIR__. '/../include/outils.php');
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="email" class="sr-only">Email</label>
-                                            <input type="email" id="email" class="form-control" placeholder="Email" name="employe[email]">
+                                            <input name="client[email]" type="email" class="form-control" placeholder="Email" >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
+                                            <label for="email" class="sr-only">Address</label>
+                                            <input name="client[address]" type="text" class="form-control" placeholder="Address" >
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label for="password" class="sr-only">Mot de passe</label>
-                                            <input type="password" id="password" class="form-control" placeholder="Mot de passe" name="employe[password]">
+                                            <input name="client[password]" type="password" id="password" class="form-control" placeholder="Mot de passe">
                                         </div>
                                     </div>
                                 </div>
-
                                 <h4 class="form-section"><i class="icon-paper"></i>Plus d'info</h4>
 
                                 <div class="form-group">
-                                    <label for="userinput18" class="sr-only">adresse</label>
-                                    <input class="form-control" type="text" placeholder="adresse" id="userinput18" name="employe[address]">
+                                    <label for="userinput5" class="sr-only">Telephone</label>
+                                    <input name="client[tel]" class="form-control" type="number" placeholder="Tel" id="userinput5">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="userinput5" class="sr-only">tel</label>
-                                    <input class="form-control" type="text" placeholder="tel" id="userinput5" name="employe[tel]">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="userinput6" class="sr-only">departement</label>
-                                    <input class="form-control" type="text" placeholder="departement" id="userinput6" name="employe[departement]">
-                                </div>
-
-                                <div class="form-group">
-                                <select name="employe[est_chefdep]" class="form-control">
-                                <option value="1">Chef de Projet</option>
-                                <option value="0">N'est pas Chef de Projet</option>
-                            </select>
+                                    <label for="userinput6" class="sr-only">Societe</label>
+                                    <input name="client[societe]" class="form-control" type="text" placeholder="Societe">
                                 </div>
 
                             </div>
 
                             <div class="form-actions right">
                                 <button type="button" class="btn btn-outline-warning mr-1">
-                                    <i class="icon-cross2"></i> Annuler
+                                    <i class="icon-cross2"></i> Anuuler
                                 </button>
                                 <button type="submit" class="btn btn-outline-primary">
                                     <i class="icon-check2"></i> Ajouter
