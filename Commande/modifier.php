@@ -4,34 +4,34 @@ require_once( __DIR__. '/../include/outils.php');
 
 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["employe"])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["commande"])) {
     
-    $employe_modifier = $_POST["employe"];
-    $employe = new employers();
+    $commande_modifier = $_POST["commande"];
+    $commande = new commande();
     
-    $employe = $employe->trouver('id', $employe_modifier['id']);
+    $commande = $commande->trouver('id', $commande_modifier['id']);
 
-    $employe->remplire_PDO($employe_modifier);
-    //dd($_POST["employe"]);
-    $result = $employe->enregistrer();
+    $commande->remplire_PDO($commande_modifier);
+    //dd($_POST["commande"]);
+    $result = $commande->enregistrer();
 
     // dd($result);
 
     if($result === true)
-        header('Location:info.php?id=' . $employe->id);
+        header('Location:info.php?id=' . $commande->id);
     else
         dd("error");
 
 }else if(isset($_GET["id"])) {
-    $employe = new employers();
-    $employe = $employe->trouver('id', $_GET['id']);
+    $commande = new commande();
+    $commande = $commande->trouver('id', $_GET['id']);
 
-    if($employe == false)
+    if($commande == false)
         header('Location:index.php');
     
-    $employe = $employe->toArray();
+    $commande = $commande->toArray();
 
-    // dd($employe);
+    // dd($commande);
 
     include "modifier.view.php";
 

@@ -78,4 +78,25 @@ class Employers extends basedonner
 }
 
 
+/**
+* Model Commandes
+*/
+class Commande extends basedonner
+{
+    const table = 'commande';
+    const columns = array('numero','projet','date_commande','date_livraison','client','chef_projet','valide','contact','commantaire');
+
+    function __construct($donner = null)
+    {
+        Parent::__construct(self::table, self::columns);
+
+        if($donner){
+            $this->remplire($donner);
+        }
+
+    }
+
+}
+
+
 

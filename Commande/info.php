@@ -6,87 +6,126 @@ require __DIR__. '/../include/outils.php';
 if(!isset($_GET['id']))
     header('Location:index.php');
 
-$employe = new employers();
-$employe = $employe->trouver('id', $_GET['id']);
+$commande = new commande();
+$commande = $commande->trouver('id', $_GET['id']);
 
-if($employe == false)
+if($commande == false)
     header('Location:index.php');
 ?>
 
-
 <?php
-    template('header', array(
-        'path' => '../'
-    ));
+template('header');
 ?>
 
-<div class="wrapper">
-    <div class="sidebar" data-color="blue" data-image="public/img/sidebar-5.jpg">
-        <?php template('sidebar'); ?> 
-    </div> <!-- .sidebar -->
 
-    <div class="main-panel">
-        <?php template('nav', array(
-            'title' => 'Employers',
-            'actions' => array(
-                array(
-                    'nom'   => 'Ajouter',
-                    'icon'  => 'fa fa-plus',
-                    'lien'  => '/employe/ajouter.php'
-                )
-            )
-        )); ?> 
-    
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
+<div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
+<?php template('sidebar'); ?> 
+</div> <!-- / main menu-->
 
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">
-                                    <?= $employe->nom ?>
-                                    <a class="btn btn-primary pull-right"  href="<?= lien('/employe/modifier.php?id=' . $employe->id) ?>">
-                                        <i class="fa fa-plus"></i>
-                                        Modifier
-                                    </a>
-                                </h4>
-                                <hr>
-                            </div>
-                            <div class="content">
-                                <div class="typo-line">
-                                    <h4><p class="category">Nom</p><?= $employe->nom ?></h4>
-                                </div>
+<nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
+<?php template('nav'); ?> 
+</nav>
 
-                                <div class="typo-line">
-                                    <h4><p class="category">Prenom</p><?= $employe->prenom ?></h4>
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">commande: <?=$_GET['id']?></h4>
+                        <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    </div>
+                    <div class="card-body collapse in">
+                        <div class="card-block">
+                            <h4 class="form-section"><i class="icon-paper"></i></h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Numero de la Commande  :&nbsp;</label>
+                                            <label><?= $commande->numero ?></label>
+                                        </div>
+                                    </div>
                                 </div>
-                               <div class="typo-line">
-                                    <h4><p class="category">Tel</p><?= $employe->tel?></h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Projet  :&nbsp;</label>
+                                            <label ><?= $commande->projet?></label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="typo-line">
-                                    <h4><p class="category">Addresse</p><?= $employe->address ?></h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Date de Commande  :&nbsp;</label>
+                                            <label ><?= $commande->date_commande?></label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="typo-line">
-                                    <h4><p class="category">Email</p><?= $employe->email ?></h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Date de Livraison  :&nbsp;</label>
+                                            <label ><?= $commande->date_livraison?></label>
+                                            </div>
+                                    </div>
                                 </div>
-                                <div class="typo-line">
-                                    <h4><p class="category">Salaire</p><?= $employe->salaire ?></h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Client  :&nbsp;</label>
+                                            <label ><?= $commande->client?></label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="typo-line">
-                                    <h4><p class="category">Password</p><?= $employe->password ?></h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Chef de Projet  :&nbsp;</label>
+                                            <label ><?= $commande->chef_projet?></label>                                            
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="typo-line">
-                                    <h4><p class="category">Admin</p><?php if($employe->admin == 1){echo "Administrateur";}else{echo "N'est pas Administrateur";} ?></h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Commande est valider  :&nbsp;</label>
+                                            <label ><?= $commande->valide?></label>                                    
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <hr>
+                                                                    
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Personne à contacter  :&nbsp;</label>
+                                            <label ><?= $commande->contact?></label>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Commantaire  :&nbsp;</label>
+                                            <label ><?= $commande->commantaire?></label>                                            
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
-                    </div> <!-- .col -->
 
-                </div>
-            </div>
-        </div> <!-- .content -->
+                        <div class="form-actions right">
+                            <a type="submit" class="btn btn-outline-primary" href="<?= lien('/commande/modifier.php?id=' . $commande->id)?>">
+                                <i class="icon-cog"></i> Modifier
+                            </a>
+                        </div>
+                        
+                    </div><!-- .body -->
+                </div><!-- .card -->
+            </div><!-- .col-8 -->
+        </div><!-- .row -->
+    </div><!-- .wrapper -->
+</div> <!-- .content -->
+
 <?php
     template('footer', array(
         'path' => '../'
