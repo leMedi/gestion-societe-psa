@@ -69,18 +69,8 @@ $employers = Employers::tous();
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->email ?></a></td>
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->departement ?></a></td>
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->est_chefdep ? "Oui" : "Non" ?></a></td>        
-                                            <td>
-                                            <span class="dropdown open">
-				                        <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="btn btn-primary dropdown-toggle dropdown-menu-right"><i class="icon-cog3"></i></button>
-				                        <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right">
-				                            <a href="#" class="dropdown-item"><i class="icon-eye6"></i> Open Task</a>
-				                            <a href="#" class="dropdown-item"><i class="icon-pen3"></i> Edit Task</a>
-				                            <a href="#" class="dropdown-item"><i class="icon-check2"></i> Complete Task</a>
-				                            <a href="#" class="dropdown-item"><i class="icon-outbox"></i> Assign to</a>
-				                            <span class="dropdown-divider"></span>
-				                            <a href="#" class="dropdown-item"><i class="icon-trash4"></i> Delete Task</a>
-				                        </span>
-				                    </span>
+                                            <td><a class="btn btn-success" href="<?= lien('/commande/modifier.php?id=' . $e->id) ?>"><i class="icon-cog"></i></a>
+                                            <a class="btn btn-danger" href="<?= lien('/commande/supprimer.php?id=' . $e->id) ?>"><i class="icon-trash icon-white"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
