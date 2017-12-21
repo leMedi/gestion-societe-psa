@@ -49,6 +49,11 @@ class Client extends basedonner
 
     }
 
+    function commandes()
+    {
+        return Commande::tous('statuts', 0);
+    }
+
 }
 
 
@@ -74,6 +79,18 @@ class Employers extends basedonner
     {
         return $this->admin == 0 ? false : true;
     }
+
+    function commandes()
+    {
+        if($this->departement == 'Contabilité')
+            return Commande::tous('statuts', 1);
+        
+        if($this->departement == "Bureau d'Etude")
+            return Commande::tous('statuts', 2);
+        
+        if($this->departement == 'Service Prototype')
+            return Commande::tous('statuts', 3);
+    }
     
 }
 
@@ -84,7 +101,7 @@ class Employers extends basedonner
 class Commande extends basedonner
 {
     const table = 'commandes';
-    const columns = array('numero','projet','date_commande','date_livraison','client','contact','commentaire');
+    const columns = array('numero','projet','date_commande','date_livraison','client','contact','commentaire', 'statuts');
 
     function __construct($donner = null)
     {
@@ -96,6 +113,18 @@ class Commande extends basedonner
 
     }
 
+    public function estProche()
+    {
+        if( strtotime($this->date_livraison) > strtotime('-5 day') )
+            return true;
+        return false;
+    }
+
+    public function aprove()
+    {
+        $this->statuts = $this->statuts + 1;
+        $this->enregistrer();
+    }
 }
 
 

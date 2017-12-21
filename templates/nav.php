@@ -98,7 +98,7 @@
                 <i class="icon-head"></i> Edit Profile
               </a>
               
-              <a href="#" class="dropdown-item">
+              <a href="<?= lien('/logout.php') ?>" class="dropdown-item">
                 <i class="icon-power3"></i> Logout
               </a>
             </div>

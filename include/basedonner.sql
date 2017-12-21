@@ -16,29 +16,31 @@ CREATE TABLE clients(
 );
 
 CREATE TABLE employers(
-   id         int           NOT NULL     AUTO_INCREMENT,
-   nom      VARCHAR (20)    NOT NULL,
-   prenom   VARCHAR (20)    NOT NULL,
-   tel      INT             NOT NULL,
-   address  VARCHAR (40)    NOT NULL,
-   email    VARCHAR (100)   NOT NULL CHECK (email LIKE '%_@__%.__%'),
-   departement  VARCHAR (100)             NOT NULL,
-   est_chefdep BOOLEAN         NOT NULL default 0,
-   password VARCHAR (30)    NOT NULL,
-   PRIMARY KEY (id)
+   id           int             NOT NULL     AUTO_INCREMENT,
+   nom          VARCHAR (20)    NOT NULL,
+   prenom       VARCHAR (20)    NOT NULL,
+   tel          INT             NOT NULL,
+   address      VARCHAR (40)    NOT NULL,
+   email        VARCHAR (100)   NOT NULL CHECK (email LIKE '%_@__%.__%'),
+   departement  VARCHAR (100)   NOT NULL,
+   est_chefdep  BOOLEAN         NOT NULL default 0,
+   password     VARCHAR (30)    NOT NULL,
+   PRIMARY      KEY (id)
 );
 
 
 
 CREATE TABLE commandes(
    id               int           NOT NULL     AUTO_INCREMENT,
-   numero           varchar(8)    NOT NULL  ,
+   client_id        int           NOT NULL,
+   numero           varchar(8)    NOT NULL,
    projet           varchar(10)   NOT NULL  ,
    date_commande    date          NOT NULL  ,
    date_livraison   date          NOT NULL  ,
    client           varchar(20)   NOT NULL  ,
    contact          varchar(20),
    commentaire      text,
+   statuts          int          default 0,
    PRIMARY KEY (id)
 );
 
@@ -54,10 +56,15 @@ VALUES
 INSERT INTO employers
     (nom, prenom, tel, address, email, departement, est_chefdep, password)
 VALUES
-    ('baghzaoui', 'Bahaa', 065878, 'ENSA dial Khouribga', 'bahaa@ensa.com', "Bureau d'Etude", '0', 'hello');
+    ('baghzaoui', 'Bahaa', 065878, 'ENSA dial Khouribga', 'bahaa@ensa.com', "Bureau d'Etude", '1', 'hello');
+
+INSERT INTO employers
+    (nom, prenom, tel, address, email, departement, est_chefdep, password)
+VALUES
+    ('Outfardine', 'Hamza', 065878, 'ENSA dial Khouribga', 'hamza@ensa.com', "Service Prototype", '0', 'hello');
 
 
 
 
-INSERT INTO commandes (numero, projet, date_commande, date_livraison, client, contact, commentaire) VALUES ('XXX', 'OCP', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa');
-INSERT INTO commandes (numero, projet, date_commande, date_livraison, client, contact, commentaire) VALUES ('XYY', 'FABLAB', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa');
+INSERT INTO commandes (client_id, numero, projet, date_commande, date_livraison, client, contact, commentaire, statuts) VALUES (0, 'XXX', 'OCP', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa', 0);
+INSERT INTO commandes (client_id, numero, projet, date_commande, date_livraison, client, contact, commentaire, statuts) VALUES (0, 'XYY', 'FABLAB', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa', 1);

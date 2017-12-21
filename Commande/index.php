@@ -3,10 +3,7 @@
 require __DIR__. '/../include/outils.php';
 $user = pageProteger(); 
 
-
-$commande = new commande();
-$commande = $commande->tous();
-
+$commandes = $user->commandes();
 
 ?>
 
@@ -21,15 +18,23 @@ $commande = $commande->tous();
 </div> <!-- / main menu-->
 
 <nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
-    <?php template('nav', array(
-        'actions' => array(
-            array(
-                'link'  => lien('/commande/ajouter.php'),
-                'text'  => 'ajouter',
-                'color' => 'success' 
-            )
-        )
-    )); ?> 
+        
+    <?php
+        if($_SESSION['is_client'])
+            template('nav', array(
+                'actions' => array(
+                    array(
+                        'link'  => lien('/commande/ajouter.php'),
+                        'text'  => 'ajouter',
+                        'color' => 'success' 
+                    )
+                )
+            ));
+        else
+            template('nav');
+            
+        
+    ?> 
 </nav>
 
 
@@ -69,8 +74,9 @@ $commande = $commande->tous();
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    foreach($commande as $e): ?>
-                                        <tr>
+                                        foreach ($commandes as $e) :
+                                    ?>
+                                        <tr class="<?= ($e->estProche())? 'bg-warning' : '' ?>">
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/commande/info.php?id=' . $e->id) ?>"><?= $e->numero ?></a></td>
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/commande/info.php?id=' . $e->id) ?>"><?= $e->projet ?></a></td>
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/commande/info.php?id=' . $e->id) ?>"><?= $e->date_commande ?></a></td>
@@ -78,11 +84,13 @@ $commande = $commande->tous();
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/commande/info.php?id=' . $e->id) ?>"><?= $e->client ?></a></td>
                                             <td><a class="blue-grey" href="<?= lien('/commande/info.php?id=' . $e->id) ?>"><?= $e->contact ?></td>
                                             <td><a class="blue-grey" ><?= $e->commentaire ?></td>    
-                                            <td><a class="btn btn-success" href="<?= lien('/commande/modifier.php?id=' . $e->id) ?>"><i class="icon-check"></i></a>
-                                            <a class="btn btn-danger" href="<?= lien('/commande/supprimer.php?id=' . $e->id) ?>"><i class="icon-close2"></i></a>
+                                            <td>
+                                                <a class="btn btn-success" href="<?= lien('/commande/approve.php?id=' . $e->id) ?>"><i class="icon-check"></i></a>
+                                                <a class="btn btn-info" href="<?= lien('/commande/modifier.php?id=' . $e->id) ?>"><i class="icon-edit2"></i></a>
+                                                <a class="btn btn-danger" href="<?= lien('/commande/supprimer.php?id=' . $e->id) ?>"><i class="icon-trash-o"></i></a>
                                             </td>
                                         </tr>
-                                    <?php endforeach ?>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

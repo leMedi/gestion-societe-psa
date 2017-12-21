@@ -22,6 +22,8 @@
         </a>
       </li>
 
+      <?php if($user->est_chefdep): ?>
+
       <li class=" nav-item">
         <a href="<?= lien('/employe/'); ?>">
           <i class="icon-users2"></i>
@@ -29,13 +31,15 @@
         </a>
       </li>
 
+      
       <li class=" nav-item">
         <a href="<?= lien('/clients/'); ?>">
-          <i class="icon-users2"></i>
-          <span class="menu-title">Clients</span>
-        </a>
-      </li>
-
+        <i class="icon-users2"></i>
+        <span class="menu-title">Clients</span>
+      </a>
+    </li>
+    
+    <?php endif; ?>
 
     </ul>
   </div> <!-- /main menu content-->
