@@ -11,11 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["email"]) && isset($_P
 
     // connected sussefully
     // fill in session
-    $_SESSION['estConnecter']   = true;
-    $_SESSION['user_id']        = $auth;
-    $_SESSION['is_client']      = false;
+    if($auth != false) {
+	    $_SESSION['estConnecter']   = true;
+	    $_SESSION['user_id']        = $auth;
+	    $_SESSION['is_client']      = false;
 
-    header('Location:'. lien('/backoffice.php'));
+	    header('Location:'. lien('/backoffice.php'));
+    }
 
 }
 
