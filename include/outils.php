@@ -61,7 +61,36 @@ function select($param, $str, $default = false)
         return 'selected';
     return '';
 }
- 
+
+
+function upload_image($image, $destination) {
+    $file_name  = $image['name'];
+    $file_size  = $image['size'];
+    $file_tmp   = $image['tmp_name'];
+    $file_type  = $image['type'];
+    
+    $file_ext=strtolower(end(explode('.',$image['name'])));
+
+    $expensions= array("jpeg","jpg","png");
+
+    if(in_array($file_ext,$expensions)=== false){
+        $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+    }
+
+    if($file_size > 2097152){
+        $errors[]='File size must be excately 2 MB';
+    }
+    
+    if(empty($errors)==true){
+        move_uploaded_file($file_tmp, $destination);
+        return true;
+    }else{
+        return $errors;
+    }
+}
+
+
+
 function pageProteger(){
     // if(isset($_SESSION['connecter']) && $_SESSION['connecter'] && isset($_SESSION['user_id'])){
     //     $employe = new Employers;

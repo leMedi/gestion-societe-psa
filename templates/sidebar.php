@@ -15,5 +15,27 @@
         </a>
       </li>
 
+      <li class=" nav-item">
+        <a href="<?= lien('/Commande/'); ?>">
+          <i class="icon-newspaper"></i>
+          <span class="menu-title">Commandes</span>
+        </a>
+      </li>
+
+      <li class=" nav-item">
+        <a href="<?= lien('/employe/'); ?>">
+          <i class="icon-users2"></i>
+          <span class="menu-title">Employes</span>
+        </a>
+      </li>
+
+      <li class=" nav-item">
+        <a href="<?= lien('/clients/'); ?>">
+          <i class="icon-users2"></i>
+          <span class="menu-title">Clients</span>
+        </a>
+      </li>
+
+
     </ul>
   </div> <!-- /main menu content-->
