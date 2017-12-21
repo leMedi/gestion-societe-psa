@@ -91,7 +91,7 @@
                 <img src="<?= asset('images/portrait/small/avatar-s-1.png') ?>" alt="avatar">
                 <i></i>
               </span>
-              <span class="user-name">John Doe</span>
+              <span class="user-name"><?= $user->nom . ' ' . $user->prenom ?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <a href="#" class="dropdown-item">

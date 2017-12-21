@@ -1,6 +1,7 @@
 <?php
 
 require __DIR__. '/../include/outils.php';
+$user = pageProteger(); 
 
 $clients = Client::tous();
 

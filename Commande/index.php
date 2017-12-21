@@ -1,6 +1,9 @@
 <?php
 
 require __DIR__. '/../include/outils.php';
+$user = pageProteger(); 
+
+
 $commande = new commande();
 $commande = $commande->tous();
 

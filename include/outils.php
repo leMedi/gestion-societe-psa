@@ -17,6 +17,7 @@ function dd($var)
 
 function template($nom, $data = array())
 {
+    global $user;
     extract($data);
     require __DIR__ . '/../templates/' . $nom . '.php';
 }
@@ -89,28 +90,27 @@ function upload_image($image, $destination) {
     }
 }
 
-
-
 function pageProteger(){
-    // if(isset($_SESSION['connecter']) && $_SESSION['connecter'] && isset($_SESSION['user_id'])){
-    //     $employe = new Employers;
-    //     $employe = $employe->trouver('id', $_SESSION['user_id']);
-    //     return $employe;
-    // }else{
-    //     $_SESSION['connecter'] = false;
-    //     $_SESSION['user_id'] = -1;
-    //     header('Location:'. lien('/login.php'));
-   
-    // }
+    if(isset($_SESSION['estConnecter']) && $_SESSION['estConnecter'] && isset($_SESSION['user_id'])){
+        if($_SESSION['is_client'])
+            dd('client');
+
+        return Employers::trouver('id', $_SESSION['user_id']);
+        
+    }else{
+        $_SESSION['estConnecter'] = false;
+        $_SESSION['user_id'] = -1;
+        header('Location:'. lien('/login/staff.php'));
+    }
 }
 
 function init_session()
 {
-    
-    
+    if(!isset($_SESSION['estConnecter'])){
+        $_SESSION['estConnecter'] = false;
+        $_SESSION['user_id'] = -1;
+        $_SESSION['is_client'] = false;
+    }
 }
 
-
-if(!lienContient('login.php')){
-    $current_user = pageProteger();
-}
+init_session();
