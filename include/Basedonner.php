@@ -207,6 +207,32 @@ class BaseDonner
         return $resultat_obj;
     }
 
+    // fonction de verification d'authentification
+    public static function auth($email, $password)
+    {
+        // connect to database
+        $db;
+        try{
+            $db = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_user, db_pass);
+        }
+        catch(PDOException $ex){
+            die('impossible de se connecter a la base de donner');
+        }
+        
+        $stmt = $db->prepare("SELECT COUNT(*) AS `total` FROM " . static::table . " WHERE email = :email and password = :password");
+        $stmt->execute(array(
+            ':email' => $email,
+            ':password' => $password
+        ));
+        
+        $result = $stmt->fetchObject();
+        
+        if ($result->total > 0) 
+            return true;
+        else
+            return false;
+    }
+
 
     ////////////////////////////////
     // Model Methodes
@@ -293,23 +319,6 @@ class BaseDonner
     public function executer($sql)
     {
         return $this->db->exec($sql);
-    }
-    
-
-    public function auth($email, $password)
-    {
-        $stmt = $this->db->prepare("SELECT COUNT(*) AS `total` FROM $this->table WHERE email = :email and password = :password");
-        $stmt->execute(array(
-            ':email' => $email,
-            ':password' => $password
-       ));
-        
-        $result = $stmt->fetchObject();
-
-        if ($result->total > 0) 
-            return true;
-        else
-            return false;
     }
 
 }
