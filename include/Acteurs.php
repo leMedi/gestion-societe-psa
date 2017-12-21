@@ -83,8 +83,8 @@ class Employers extends basedonner
 */
 class Commande extends basedonner
 {
-    const table = 'commande';
-    const columns = array('numero','projet','date_commande','date_livraison','client','chef_projet','valide','contact','commantaire');
+    const table = 'commandes';
+    const columns = array('numero','projet','date_commande','date_livraison','client','contact','commentaire');
 
     function __construct($donner = null)
     {
