@@ -4,7 +4,7 @@ session_regenerate_id();
 
 init_session();
 
-require_once('config.exemple.php');
+require_once('config.php');
 require_once('basedonner.php');
 require_once('Acteurs.php');
 
