@@ -208,6 +208,8 @@ class BaseDonner
     }
 
     // fonction de verification d'authentification
+    // false c'est incorrect
+    // id de l'utilisateur si true
     public static function auth($email, $password)
     {
         // connect to database
@@ -219,7 +221,7 @@ class BaseDonner
             die('impossible de se connecter a la base de donner');
         }
         
-        $stmt = $db->prepare("SELECT COUNT(*) AS `total` FROM " . static::table . " WHERE email = :email and password = :password");
+        $stmt = $db->prepare("SELECT id, COUNT(*) AS `total` FROM " . static::table . " WHERE email = :email and password = :password");
         $stmt->execute(array(
             ':email' => $email,
             ':password' => $password
@@ -228,7 +230,7 @@ class BaseDonner
         $result = $stmt->fetchObject();
         
         if ($result->total > 0) 
-            return true;
+            return $result->id;
         else
             return false;
     }
