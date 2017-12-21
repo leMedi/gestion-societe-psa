@@ -45,6 +45,19 @@ CREATE TABLE commandes(
 -- jeux données
 INSERT INTO clients (nom, prenom, tel, address, email, societe, password) VALUES ('ElHaij', 'Mehdi', 06004868, 'ENSA heda 3amala', 'mehdi@ensa.com', 'ENSA', 'helloworld');
 INSERT INTO clients (nom, prenom, tel, address, email, societe, password) VALUES ('ElYaacoubi', 'Achraf', 06112233, 'ENSA heda 3amala', 'achraf@ensa.com', 'ENSA', 'helloworld');
-INSERT INTO commandes (numero, projet, date_commande, date_livraison, client, contact, commentaire ) VALUES ('XXX', 'OCP', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa');
-INSERT INTO commandes (numero, projet, date_commande, date_livraison, client, contact, commentaire) VALUES ('XYY', 'FABLAB', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa');
-INSERT INTO employers (nom, prenom, tel, address , email, departement, est_chefdep, password) VALUES ('ElHaij', 'Mehdi' , 06004868 , 'ENSA heda 3amala', 'mehdi@ensa.com', 'info', 1,  'helloworld');
+
+INSERT INTO employers
+    (nom, prenom, tel, address, email, departement, est_chefdep, password)
+VALUES
+    ('Saqi', 'Younes', 065878, 'ENSA dial Khouribga', 'saki@ensa.com', 'Contabilité', '0', 'hello');
+
+INSERT INTO employers
+    (nom, prenom, tel, address, email, departement, est_chefdep, password)
+VALUES
+    ('baghzaoui', 'Bahaa', 065878, 'ENSA dial Khouribga', 'bahaa@ensa.com', "Bureau d'Etude", '0', 'hello');
+
+
+
+
+INSERT INTO commande (numero, projet, date_commande, date_livraison, client, chef_projet, valide, contact, commantaire) VALUES ('XXX', 'OCP', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 0, 'bahaa', 'bahaa');
+INSERT INTO commande (numero, projet, date_commande, date_livraison, client, chef_projet, valide, contact, commantaire) VALUES ('XYY', 'FABLAB', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 1, 'bahaa', 'bahaa');
