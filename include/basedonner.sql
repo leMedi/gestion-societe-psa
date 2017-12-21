@@ -59,5 +59,5 @@ VALUES
 
 
 
-INSERT INTO commande (numero, projet, date_commande, date_livraison, client, chef_projet, valide, contact, commantaire) VALUES ('XXX', 'OCP', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 0, 'bahaa', 'bahaa');
-INSERT INTO commande (numero, projet, date_commande, date_livraison, client, chef_projet, valide, contact, commantaire) VALUES ('XYY', 'FABLAB', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 1, 'bahaa', 'bahaa');
+INSERT INTO commandes (numero, projet, date_commande, date_livraison, client, contact, commentaire) VALUES ('XXX', 'OCP', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa');
+INSERT INTO commandes (numero, projet, date_commande, date_livraison, client, contact, commentaire) VALUES ('XYY', 'FABLAB', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa');
