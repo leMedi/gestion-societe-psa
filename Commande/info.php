@@ -78,23 +78,8 @@ template('header');
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Chef de Projet  :&nbsp;</label>
-                                            <label ><?= $commande->chef_projet?></label>                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Commande est valider  :&nbsp;</label>
-                                            <label ><?= $commande->valide?></label>                                    
-                                        </div>
-                                    </div>
-                                </div>
-                                                                    
+                            
+                                                       
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -107,7 +92,7 @@ template('header');
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Commantaire  :&nbsp;</label>
-                                            <label ><?= $commande->commantaire?></label>                                            
+                                            <label ><?= $commande->commentaire?></label>                                            
                                         </div>
                                     </div>
                                 </div>
