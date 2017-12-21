@@ -21,44 +21,38 @@ if(isset($_POST['confirmer']) && isset($_POST['id']))
 ?>
 
 
+
 <?php
-    template('header', array(
-        'path' => '../'
-    ));
+    template('header');
 ?>
-<div class="wrapper">
-  <div class="sidebar" data-color="blue" data-image="../public/img/sidebar-5.jpg">
-      <?php template('sidebar'); ?> 
-  </div> <!-- .sidebar -->
 
-  <div class="main-panel">
-  
-    <?php template('nav', array(
-        'title' => 'employes',
-        'actions' => array(
-            array(
-                'nom'   => 'Ajouter',
-                'icon'  => 'fa fa-plus',
-                'lien'  => '/employe/ajouter.php'
-            )
-        )
-    )); ?> 
 
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-push-3 col-lg-6">
-                    <div class="card"  style="text-align: center;">
-                        <div class="header">
-                            <h4 class="title">Comfirmer la Suppression</h4>
-                            <h5>Voulez-vous vraiment supprimer ce employe?</h5>
+<div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
+    <?php template('sidebar'); ?> 
+</div> <!-- / main menu-->
+
+<nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
+    <?php template('nav'); ?> 
+</nav>
+
+    <div class="app-content content container-fluid">
+        <div class="content-wrapper">
+           <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" >
+                <div class="card" style="padding: 35px;" >
+                    
+                    <div class="card-header" style="text-align: center;">
+                        <h4 class="card-title">Comfirmer la Suppression</h4>
+                         
+                            <h5>Voulez-vous vraiment supprimer cet employé ?</h5>
                         </div>
-                        <div class="content">
+                        <div class="content" style="margin-top: 20px;">
                             <form class="form-inline" method="POST" >
                             	<input type="text" name="id" value="<?= $_GET['id'] ?>" hidden>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-success" value="1" name="confirmer">comfirmer</button>
-                                    <a href="<?= lien('/employe/') ?>" type="submit" class="btn btn-danger">Annuler</a>
+                                <div class="form-group" >
+                                    <button type="submit" class="btn btn-success " value="1" name="confirmer">comfirmer</button>
+                                    <a class="btn btn-danger " href="<?= lien('/employe/') ?>" role="button">Annuler</a>
                                 </div> <!-- .form-group -->
                                 
                             </form>
@@ -70,7 +64,5 @@ if(isset($_POST['confirmer']) && isset($_POST['id']))
         </div>
     </div> <!-- .content -->
 <?php
-    template('footer', array(
-        'path' => '../'
-    ));
+    template('footer');
 ?>

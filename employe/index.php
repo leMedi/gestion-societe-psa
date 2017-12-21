@@ -21,13 +21,20 @@ $employers = Employers::tous();
 </div> <!-- / main menu-->
 
 <nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
-    <?php template('nav'); ?> 
+    <?php template('nav', array(
+        'actions' => array(
+            array(
+                'link'  => lien('/employe/ajouter.php'),
+                'text'  => 'ajouter',
+                'color' => 'success' 
+            )
+        )
+    )); ?> 
 </nav>
 
     
     
-<div class="app-content content container-fluid" style="
-    margin-bottom: 300px;" >
+<div class="app-content content container-fluid" >
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
@@ -69,8 +76,8 @@ $employers = Employers::tous();
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->email ?></a></td>
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->departement ?></a></td>
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->est_chefdep ? "Oui" : "Non" ?></a></td>        
-                                            <td><a class="btn btn-success" href="<?= lien('/commande/modifier.php?id=' . $e->id) ?>"><i class="icon-cog"></i></a>
-                                            <a class="btn btn-danger" href="<?= lien('/commande/supprimer.php?id=' . $e->id) ?>"><i class="icon-trash icon-white"></i></a>
+                                            <td><a class="btn btn-success" href="<?= lien('/employe/modifier.php?id=' . $e->id) ?>"><i class="icon-cog"></i></a>
+                                            <a class="btn btn-danger" href="<?= lien('/employe/supprimer.php?id=' . $e->id) ?>"><i class="icon-trash icon-white"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

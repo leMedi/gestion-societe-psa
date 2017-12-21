@@ -18,16 +18,22 @@ $commande = $commande->tous();
 </div> <!-- / main menu-->
 
 <nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
-    <?php template('nav'); ?> 
+    <?php template('nav', array(
+        'actions' => array(
+            array(
+                'link'  => lien('/commande/ajouter.php'),
+                'text'  => 'ajouter',
+                'color' => 'success' 
+            )
+        )
+    )); ?> 
 </nav>
 
 
 
 
 
-
-<div class="app-content content container-fluid" style="
-    margin-bottom: 300px;" >
+<div class="app-content content container-fluid" >
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">

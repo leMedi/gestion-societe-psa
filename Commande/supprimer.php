@@ -20,6 +20,7 @@ if(isset($_POST['confirmer']) && isset($_POST['id']))
 }
 ?>
 
+
 <?php
     template('header');
 ?>
@@ -33,32 +34,34 @@ if(isset($_POST['confirmer']) && isset($_POST['id']))
     <?php template('nav'); ?> 
 </nav>
 
-
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-push-3 col-lg-6">
-                    <div class="card"  style="text-align: center;">
-                        <div class="header">
-                            <h4 class="title">Comfirmer la Suppression</h4>
-                            <h5>Voulez-vous vraiment supprimer ce employe?</h5>
-                        </div>
-                        <div class="content">
-                            <form class="form-inline" method="POST" >
-                            	<input type="text" name="id" value="<?= $_GET['id'] ?>" hidden>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-success" value="1" name="confirmer">comfirmer</button>
-                                    <a href="<?= lien('/commande/')?>" type="submit" class="btn btn-danger">Annuler</a>
-                                </div> <!-- .form-group -->
-                                
-                            </form>
-                                        
-                        </div>
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
+       <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" >
+            <div class="card" style="padding: 35px;" >
+                
+                <div class="card-header" style="text-align: center;">
+                    <h4 class="card-title">Comfirmer la Suppression</h4>
+                     
+                        <h5>Voulez-vous vraiment supprimer cette Commande?</h5>
                     </div>
-                </div> <!-- .col -->
-            </div> <!-- .row -->
-        </div>
-    </div> <!-- .content -->
+                    <div class="content" style="margin-top: 20px;">
+                        <form class="form-inline" method="POST" >
+                            <input type="text" name="id" value="<?= $_GET['id'] ?>" hidden>
+                            <div class="form-group" >
+                                <button type="submit" class="btn btn-success " value="1" name="confirmer">comfirmer</button>
+                                <a class="btn btn-danger " href="<?= lien('/commande/') ?>" role="button">Annuler</a>
+                            </div> <!-- .form-group -->
+                            
+                        </form>
+                                    
+                    </div>
+                </div>
+            </div> <!-- .col -->
+        </div> <!-- .row -->
+    </div>
+</div> <!-- .content -->
 
 
 <?php
