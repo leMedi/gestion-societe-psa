@@ -221,15 +221,14 @@ class BaseDonner
             die('impossible de se connecter a la base de donner');
         }
         
-        $stmt = $db->prepare("SELECT id, COUNT(*) AS `total` FROM " . static::table . " WHERE email = :email and password = :password");
+        $stmt = $db->prepare("SELECT id, COUNT(*) AS `total` FROM " . static::table . " WHERE email = :email and password = :password GROUP BY id");
         $stmt->execute(array(
             ':email' => $email,
             ':password' => $password
         ));
         
         $result = $stmt->fetchObject();
-        
-        if ($result->total > 0) 
+        if ($result != false && $result->total > 0) 
             return $result->id;
         else
             return false;
