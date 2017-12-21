@@ -16,7 +16,16 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 }
 
 
+.company-logo-label {
+	width: 100%;
+}
+
+.media .media-body {
+	width: inherit;
+}
+
 footer.footer {
+	width: 100%;
 	position: fixed;
 	bottom: 0;
 }

@@ -37,7 +37,7 @@ class Client extends basedonner
 {
     const table = 'clients';
     const columns = array('nom', 'prenom', 'tel', 'address',
-                             'email', 'societe', 'password');
+                             'email', 'societe', 'password', 'avatar');
 
     function __construct($donner = null)
     {

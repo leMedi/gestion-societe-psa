@@ -51,8 +51,7 @@ $clients = Client::tous();
                             <table class="table table-hover mb-0">
                                 <thead>
                                     <tr>
-                                        <th>Nom</th>
-                                        <th>Prenom</th>
+                                        <th>Nom & Prenom</th>
                                         <th>Societe</th>
                                         <th>tel</th>
                                         <th>address</th>
@@ -64,8 +63,19 @@ $clients = Client::tous();
                                         foreach ($clients as $client):
                                     ?>
                                     <tr>
-                                        <td class="text-truncate"><a href="#"><?= $client->nom ?></a></td>
-                                        <td class="text-truncate"><?= $client->prenom ?></td>
+                                        <td class="text-truncate">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <span class="avatar avatar-sm avatar-online rounded-circle">
+                                                        <img src="<?= lien('/public/images/clients/' . $client->avatar) ?>" alt="avatar">
+                                                        <i></i>
+                                                    </span>
+                                                </div>
+                                                <div class="media-body media-middle">
+                                                    <a href="#" class="media-heading"><?= $client->nom ?></a>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td class="text-truncate"><?= $client->societe ?></td>
                                         <td class="text-truncate"><?= $client->tel ?></td>
                                         <td class="text-truncate"><?= $client->address ?></td>

@@ -11,6 +11,7 @@ CREATE TABLE clients(
    email    VARCHAR (100)   NOT NULL    CHECK (email LIKE '%_@__%.__%'),
    societe  VARCHAR (100)   NOT NULL,
    password VARCHAR (30)    NOT NULL,
+   avatar   VARCHAR (30)    NOT NULL    default 'avatar',
    PRIMARY KEY (id)
 );
 
