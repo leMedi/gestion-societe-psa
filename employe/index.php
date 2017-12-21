@@ -6,7 +6,7 @@ require __DIR__. '/../include/outils.php';
 
 // $employers = new Employers();
 // $employers = $employers->tous();
-
+$employers = Employers::tous();
 
 ?>
 
@@ -54,54 +54,36 @@ require __DIR__. '/../include/outils.php';
                                         <th>email</th>
                                         <th>departement</th>
                                         <th>chef de Projet</th>
+                                        <th>actions</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="text-truncate"><a href="#">INV-001001</a></td>
-                                        <td class="text-truncate">Elizabeth W.</td>
-                                        <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
-                                        <td class="text-truncate">10/05/2016</td>
-                                        <td class="text-truncate">$ 1200.00</td>
-                                        <td class="text-truncate">info</td>
-                                        <td class="text-truncate">oui</td>                                        
-                                    </tr>
-                                    <tr>
-                                        <td class="text-truncate"><a href="#">INV-001012</a></td>
-                                        <td class="text-truncate">Andrew D.</td>
-                                        <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
-                                        <td class="text-truncate">20/07/2016</td>
-                                        <td class="text-truncate">$ 152.00</td>
-                                        <td class="text-truncate">info</td>
-                                        <td class="text-truncate">oui</td> 
-                                    </tr>
-                                    <tr>
-                                        <td class="text-truncate"><a href="#">INV-001401</a></td>
-                                        <td class="text-truncate">Megan S.</td>
-                                        <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
-                                        <td class="text-truncate">16/11/2016</td>
-                                        <td class="text-truncate">$ 1450.00</td>
-                                        <td class="text-truncate">info</td>
-                                        <td class="text-truncate">oui</td> 
-                                    </tr>
-                                    <tr>
-                                        <td class="text-truncate"><a href="#">INV-01112</a></td>
-                                        <td class="text-truncate">Doris R.</td>
-                                        <td class="text-truncate"><span class="tag tag-default tag-warning">Overdue</span></td>
-                                        <td class="text-truncate">11/12/2016</td>
-                                        <td class="text-truncate">$ 5685.00</td>
-                                        <td class="text-truncate">info</td>
-                                        <td class="text-truncate">oui</td> 
-                                    </tr>
-                                    <tr>
-                                        <td class="text-truncate"><a href="#">INV-008101</a></td>
-                                        <td class="text-truncate">Walter R.</td>
-                                        <td class="text-truncate"><span class="tag tag-default tag-warning">Overdue</span></td>
-                                        <td class="text-truncate">18/05/2016</td>
-                                        <td class="text-truncate">$ 685.00</td>
-                                        <td class="text-truncate">info</td>
-                                        <td class="text-truncate">oui</td> 
-                                    </tr>
+                                    <?php 
+                                    foreach($employers as $e): ?>
+                                        <tr>
+                                            <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->nom ?></a></td>
+                                            <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->prenom ?></a></td>
+                                            <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->tel ?></a></td>
+                                            <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->address ?></a></td>
+                                            <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->email ?></a></td>
+                                            <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->departement ?></a></td>
+                                            <td class="text-truncate"><a class="blue-grey" href="<?= lien('/employe/info.php?id=' . $e->id) ?>"><?= $e->est_chefdep ? "Oui" : "Non" ?></a></td>        
+                                            <td>
+                                            <span class="dropdown open">
+				                        <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="btn btn-primary dropdown-toggle dropdown-menu-right"><i class="icon-cog3"></i></button>
+				                        <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right">
+				                            <a href="#" class="dropdown-item"><i class="icon-eye6"></i> Open Task</a>
+				                            <a href="#" class="dropdown-item"><i class="icon-pen3"></i> Edit Task</a>
+				                            <a href="#" class="dropdown-item"><i class="icon-check2"></i> Complete Task</a>
+				                            <a href="#" class="dropdown-item"><i class="icon-outbox"></i> Assign to</a>
+				                            <span class="dropdown-divider"></span>
+				                            <a href="#" class="dropdown-item"><i class="icon-trash4"></i> Delete Task</a>
+				                        </span>
+				                    </span>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
                                 </tbody>
                             </table>
                         </div>

@@ -57,13 +57,13 @@ class Client extends basedonner
 */
 class Employers extends basedonner
 {
-    protected $table = 'employers';
-    protected $columns = array('nom', 'prenom', 'tel','email','address','salaire','password','admin');
+    const table = 'employers';
+    const columns = array('nom', 'prenom', 'email','password','address','tel','departement','est_chefdep');
 
     function __construct($donner = null)
     {
-        Parent::__construct($this->table, $this->columns);
-
+        Parent::__construct(self::table, self::columns);
+        
         if($donner){
             $this->remplire($donner);
         }
@@ -75,6 +75,27 @@ class Employers extends basedonner
         return $this->admin == 0 ? false : true;
     }
     
+}
+
+
+/**
+* Model Commandes
+*/
+class Commande extends basedonner
+{
+    const table = 'commande';
+    const columns = array('numero','projet','date_commande','date_livraison','client','chef_projet','valide','contact','commantaire');
+
+    function __construct($donner = null)
+    {
+        Parent::__construct(self::table, self::columns);
+
+        if($donner){
+            $this->remplire($donner);
+        }
+
+    }
+
 }
 
 

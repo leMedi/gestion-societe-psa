@@ -9,40 +9,30 @@ if(!isset($_GET['id']))
 
 if(isset($_POST['confirmer']) && isset($_POST['id']))
 {
-	$employe = new Employers();
-	$employe = $employe->trouver('id', $_POST['id']);
-	if($employe != false)
+	$commande = new commande();
+	$commande = $commande->trouver('id', $_POST['id']);
+	if($commande != false)
 	{
-    	$employe->supprimer();
+    	$commande->supprimer();
     	header('Location:index.php');
     }
 
 }
 ?>
 
-
 <?php
-    template('header', array(
-        'path' => '../'
-    ));
+    template('header');
 ?>
-<div class="wrapper">
-  <div class="sidebar" data-color="blue" data-image="../public/img/sidebar-5.jpg">
-      <?php template('sidebar'); ?> 
-  </div> <!-- .sidebar -->
 
-  <div class="main-panel">
-  
-    <?php template('nav', array(
-        'title' => 'employes',
-        'actions' => array(
-            array(
-                'nom'   => 'Ajouter',
-                'icon'  => 'fa fa-plus',
-                'lien'  => '/employe/ajouter.php'
-            )
-        )
-    )); ?> 
+
+<div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
+    <?php template('sidebar'); ?> 
+</div> <!-- / main menu-->
+
+<nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
+    <?php template('nav'); ?> 
+</nav>
+
 
     <div class="content">
         <div class="container-fluid">
@@ -58,7 +48,7 @@ if(isset($_POST['confirmer']) && isset($_POST['id']))
                             	<input type="text" name="id" value="<?= $_GET['id'] ?>" hidden>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-success" value="1" name="confirmer">comfirmer</button>
-                                    <a href="<?= lien('/employe/') ?>" type="submit" class="btn btn-danger">Annuler</a>
+                                    <a href="<?= lien('/commande/')?>" type="submit" class="btn btn-danger">Annuler</a>
                                 </div> <!-- .form-group -->
                                 
                             </form>
@@ -69,6 +59,8 @@ if(isset($_POST['confirmer']) && isset($_POST['id']))
             </div> <!-- .row -->
         </div>
     </div> <!-- .content -->
+
+
 <?php
     template('footer', array(
         'path' => '../'
