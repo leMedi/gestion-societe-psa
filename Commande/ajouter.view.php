@@ -61,36 +61,12 @@ require_once(__DIR__. '/../include/outils.php');
                                                 </div>
                                         </div>
                                     </div>
+                                   
+                                   
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Client</label>
-                                                <input name="commande[client]" required="required" type="text" class="form-control" placeholder="Bahaa Eddine">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Chef de Projet</label>
-                                                <input name="commande[chef_projet]" type="text" class="form-control" placeholder="Bahaa Eddine">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input name="commande[valide]" type="text" value="0" hidden >
-                                    <h4 class="form-section"><i class="icon-paper-clip"></i>References</h4>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Personne à contacter</label>
-                                                <input name="commande[contact]" type="text" class="form-control" placeholder="Bahaa Eddine">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Commantaire</label>
+                                                <label>Commentaire</label>
                                                 <textarea rows="5" name="commande[commantaire]"class="form-control">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi accusantium doloribus, perspiciatis in facilis consequuntur, excepturi accusamus minima enim sequi nam atque quae possimus. Repudiandae commodi corrupti natus quo odit?
                                                 </textarea>
                                             </div>

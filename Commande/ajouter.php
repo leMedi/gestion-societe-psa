@@ -1,6 +1,6 @@
 <?php
 require_once( __DIR__. '/../include/outils.php');
-$user = pageProteger(); 
+$user = Client::trouver("id", $_SESSION["user_id"]);
 
 $errors = "";
 
