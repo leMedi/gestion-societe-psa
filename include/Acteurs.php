@@ -51,7 +51,19 @@ class Client extends basedonner
 
     function commandes()
     {
-        return Commande::tous('statuts', 0);
+        $stmt = $this->db->prepare('SELECT * FROM ' . Commande::table . ' WHERE client_id = :client_id AND statuts = 0');
+        $stmt->bindParam(':client_id', $this->id);
+        $stmt->execute();
+        
+        $resultat = $stmt->fetchAll();
+
+        $resultat_obj = array();
+        foreach ($resultat as $line) {
+            $p = new Commande();
+            $p->remplire_PDO($line);
+            $resultat_obj[] = $p;
+        }
+        return resultat_obj;
     }
 
 }
@@ -101,7 +113,7 @@ class Employers extends basedonner
 class Commande extends basedonner
 {
     const table = 'commandes';
-    const columns = array('numero','projet','date_commande','date_livraison','client','contact','commentaire', 'statuts');
+    const columns = array('client_id', 'numero','projet','date_commande','date_livraison','client','contact','commentaire', 'statuts');
 
     function __construct($donner = null)
     {

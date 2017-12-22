@@ -33,7 +33,7 @@
 
       
       <li class=" nav-item">
-        <a href="<?= lien('/clients/'); ?>">
+        <a href="<?= lien('/clients/list.php'); ?>">
         <i class="icon-users2"></i>
         <span class="menu-title">Clients</span>
       </a>
