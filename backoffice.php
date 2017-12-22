@@ -18,7 +18,9 @@ $commandes = $user->commandes();
 </div> <!-- / main menu-->
 
 <nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
-    <?php template('nav'); ?> 
+    <?php template('nav', array(
+        'companyTitle' => $user->departement
+    )); ?> 
 </nav>
 
     

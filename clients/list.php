@@ -68,7 +68,7 @@ $clients = Client::tous();
                                             <div class="media">
                                                 <div class="media-left">
                                                     <span class="avatar avatar-sm avatar-online rounded-circle">
-                                                        <img src="<?= lien('/public/images/clients/' . $client->avatar) ?>" alt="avatar">
+                                                        <img src="<?= lien('/public/avatars/' . $client->avatar) ?>" alt="avatar">
                                                         <i></i>
                                                     </span>
                                                 </div>

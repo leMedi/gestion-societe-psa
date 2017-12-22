@@ -45,7 +45,7 @@ CREATE TABLE commandes(
 );
 
 -- jeux données
-INSERT INTO clients (nom, prenom, tel, address, email, societe, password) VALUES ('ElHaij', 'Mehdi', 06004868, 'ENSA heda 3amala', 'mehdi@ensa.com', 'ENSA', 'hello');
+INSERT INTO clients (nom, prenom, tel, address, email, societe, password, avatar) VALUES ('ElHaij', 'Mehdi', 06004868, 'ENSA heda 3amala', 'mehdi@ensa.com', 'ENSA', 'hello', 'me.png');
 INSERT INTO clients (nom, prenom, tel, address, email, societe, password, avatar) VALUES ('ElYaacoubi', 'Achraf', 06112233, 'ENSA heda 3amala', 'achraf@ensa.com', 'ENSA', 'hello', 'achraf.jpg');
 
 INSERT INTO employers
