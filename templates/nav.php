@@ -9,7 +9,7 @@
         </li>
         <li class="nav-item">
           <a href="index.html" class="navbar-brand nav-link">
-            <img alt="branding logo" src="<?= asset('images/logo/robust-logo-light.png') ?>" class="brand-logo">
+            <img alt="branding logo" src="<?= asset('images/logo.png') ?>" class="brand-logo" style="width: 100%;">
           </a>
         </li>
         <li class="nav-item hidden-md-up float-xs-right">
