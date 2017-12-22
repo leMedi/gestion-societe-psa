@@ -41,6 +41,11 @@
           <li class="nav-item">
             <a href="<?= $action['link'] ?>" class="nav-action btn btn-<?= $action['color'] ?>"><?= $action['text'] ?></a>
           </li>
+          
+          
+          <li class="nav-item "> <a class="nav-link nav-menu-main menu-toggle hidden-xs text-xs-center" > <h3><?= $action['companyTitle'] ?></h3></a>
+
+          </li>
           <?php
             endforeach;
           ?>
