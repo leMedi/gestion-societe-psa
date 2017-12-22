@@ -1,16 +1,20 @@
 <?php
 require __DIR__. '/../include/outils.php';
+$user = null;
 
+if($_SESSION['is_client'])
+    $user = Client::trouver("id", $_SESSION["user_id"]);
+else
+    $user = pageProteger();  
 
 
 if(!isset($_GET['id']))
-    header('Location:index.php');
+    header('Location:' . client('/backoffice.php'));
 
-$commande = new commande();
-$commande = $commande->trouver('id', $_GET['id']);
+$commande = Commande::trouver('id', $_GET['id']);
 
 if($commande == false)
-    header('Location:index.php');
+    header('Location:' . client('/backoffice.php'));
 ?>
 
 <?php
@@ -74,15 +78,6 @@ template('header');
                                     </div>
                                 </div>
                               
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <h6 class="blue-grey">Client  :</h6>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <h5><?= $commande->client?></h5>
-                                    </div>
-                                </div>
-
                                 <div class="row">
                                     <div class="col-md-5">
                                         <h6 class="blue-grey">Personne à contacter   :</h6>

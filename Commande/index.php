@@ -4,7 +4,6 @@ require __DIR__. '/../include/outils.php';
 $user = pageProteger(); 
 
 $commandes = $user->commandes();
-
 ?>
 
 
@@ -65,7 +64,6 @@ $commandes = $user->commandes();
                                         <th>Projet</th>
                                         <th>Date Commande</th>
                                         <th>Date Livraison</th>
-                                        <th>Client</th>
                                         <th>Contact</th>
                                         <th>Commentaire</th>
                                         <th>Valider/Supp</th>
@@ -81,7 +79,6 @@ $commandes = $user->commandes();
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/commande/info.php?id=' . $e->id) ?>"><?= $e->projet ?></a></td>
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/commande/info.php?id=' . $e->id) ?>"><?= $e->date_commande ?></a></td>
                                             <td class="text-truncate"><a class="blue-grey" href="<?= lien('/commande/info.php?id=' . $e->id) ?>"><?= $e->date_livraison ?></a></td>
-                                            <td class="text-truncate"><a class="blue-grey" href="<?= lien('/commande/info.php?id=' . $e->id) ?>"><?= $e->client ?></a></td>
                                             <td><a class="blue-grey" href="<?= lien('/commande/info.php?id=' . $e->id) ?>"><?= $e->contact ?></td>
                                             <td><a class="blue-grey" ><?= $e->commentaire ?></td>    
                                             <td>

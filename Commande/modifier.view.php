@@ -78,34 +78,8 @@ function ancient($cle)
                                                 </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Client</label>
-                                                <input name="commande[client]" required="required" type="text" class="form-control" value="<?= ancient('client') ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Chef de Projet</label>
-                                                <input name="commande[chef_projet]" type="text" class="form-control" value="<?= ancient('chef_projet') ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Livrer</label>
-                                                <select name="commande[valide]" value="<?= ancient('valide') ?>">
-                                                <option value="0">Pas encore</option>
-                                                <option value="1">Deja livre</option>
-                                                </select>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
+                                    
                                     <h4 class="form-section"><i class="icon-paper-clip"></i>References</h4>
                                     <div class="row">
                                         <div class="col-md-12">

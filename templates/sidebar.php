@@ -15,6 +15,17 @@
         </a>
       </li>
 
+
+      <?php if($_SESSION['is_client']) :?>
+      <li class=" nav-item">
+        <a href="<?= lien('/clients/'); ?>">
+          <i class="icon-newspaper"></i>
+          <span class="menu-title">Commandes</span>
+        </a>
+      </li>
+
+      <?php else:?>
+
       <li class=" nav-item">
         <a href="<?= lien('/Commande/'); ?>">
           <i class="icon-newspaper"></i>
@@ -22,7 +33,9 @@
         </a>
       </li>
 
-      <?php if($user->est_chefdep): ?>
+      <?php endif; ?>
+
+      <?php if(!$_SESSION['is_client'] && $user->est_chefdep): ?>
 
       <li class=" nav-item">
         <a href="<?= lien('/employe/'); ?>">

@@ -40,7 +40,7 @@ require_once(__DIR__. '/../include/outils.php');
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
 
-                        <form class="form" method="POST">
+                        <form class="form" method="POST" enctype="multipart/form-data">
                             <div class="form-body">
                                 <h4 class="form-section"><i class="icon-eye6"></i> A propos d'Employer</h4>
                                 <div class="row">
@@ -85,16 +85,27 @@ require_once(__DIR__. '/../include/outils.php');
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="userinput6" class="sr-only">departement</label>
-                                    <input class="form-control" type="text" placeholder="departement" id="userinput6" name="employe[departement]">
+                                    <label class="sr-only">departement</label>
+                                    <select name="employe[departement]" class="form-control">
+                                        <option value="Contabilité">Contabilité</option>
+                                        <option value="Bureau d'Etude">Bureau d'Etude</option>
+                                        <option value="Service Prototype">Service Prototype</option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
-                                <select name="employe[est_chefdep]" class="form-control">
-                                <option value="1">Chef de Projet</option>
-                                <option value="0">N'est pas Chef de Projet</option>
-                            </select>
+                                    <select name="employe[est_chefdep]" class="form-control">
+                                        <option value="1">Chef de Projet</option>
+                                        <option value="0">N'est pas Chef de Projet</option>
+                                    </select>
                                 </div>
+
+                                <fieldset class="form-group">
+                                    <label class="custom-file company-logo-label">
+                                        <input name="avatar" type="file" id="file" class="custom-file-input">
+                                        <span class="custom-file-control"></span>
+                                    </label>
+                                </fieldset>
 
                             </div>
 

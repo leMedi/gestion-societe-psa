@@ -51,7 +51,7 @@ class Client extends basedonner
 
     function commandes()
     {
-        $stmt = $this->db->prepare('SELECT * FROM ' . Commande::table . ' WHERE client_id = :client_id AND statuts = 0');
+        $stmt = $this->db->prepare('SELECT * FROM ' . Commande::table . ' WHERE client_id = :client_id');
         $stmt->bindParam(':client_id', $this->id);
         $stmt->execute();
         
@@ -75,7 +75,7 @@ class Client extends basedonner
 class Employers extends basedonner
 {
     const table = 'employers';
-    const columns = array('nom', 'prenom', 'email','password','address','tel','departement','est_chefdep');
+    const columns = array('nom', 'prenom', 'email','password','address','tel','departement','est_chefdep', 'avatar');
 
     function __construct($donner = null)
     {
@@ -113,7 +113,7 @@ class Employers extends basedonner
 class Commande extends basedonner
 {
     const table = 'commandes';
-    const columns = array('client_id', 'numero','projet','date_commande','date_livraison','client','contact','commentaire', 'statuts');
+    const columns = array('client_id', 'numero','projet','date_commande','date_livraison', 'contact','commentaire', 'statuts');
 
     function __construct($donner = null)
     {

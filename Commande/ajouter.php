@@ -7,6 +7,9 @@ $errors = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["commande"])) {
     
     $commande = new commande($_POST["commande"]);
+    $commande->client_id = $user->id;
+    $commande->date_commande = date("d/m/Y");
+    $commande->statuts = 1;
 
     $result = $commande->enregistrer();
 

@@ -95,15 +95,26 @@ require_once(__DIR__. '/../include/outils.php');
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
+                                </div> <!-- .row -->
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <fieldset class="form-group">
+                                            <label class="custom-file company-logo-label">
+                                                <input name="avatar" type="file" id="file" class="custom-file-input">
+                                                <span class="custom-file-control"></span>
+                                            </label>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-md-6">
                                         <fieldset class="form-group">
                                             <label class="custom-file company-logo-label">
                                                 <input name="logo" type="file" id="file" class="custom-file-input">
                                                 <span class="custom-file-control"></span>
                                             </label>
-                                            <!-- <input name="client[address]" type="text" class="form-control" placeholder="Address" > -->
                                         </fieldset>
-                                    </div>  
+                                    </div>
                                 </div> <!-- .row -->
                             </div>
                             

@@ -43,13 +43,14 @@
           </li>
           
           
-          <li class="nav-item "> <a class="nav-link nav-menu-main menu-toggle hidden-xs text-xs-center" > <h3><?= $action['companyTitle'] ?></h3></a>
-
-          </li>
           <?php
             endforeach;
           ?>
         </ul>
+
+        <?php if(isset($companyTitle)): ?>
+            <h3 style="display:inline-block; margin-top:13px; margin-left: 18%;"><?= $companyTitle ?></h3>
+        <?php endif; ?>
 
         <ul class="nav navbar-nav float-xs-right">
           
@@ -93,7 +94,7 @@
           <li class="dropdown dropdown-user nav-item">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link">
               <span class="avatar avatar-online">
-                <img src="<?= asset('images/portrait/small/avatar-s-1.png') ?>" alt="avatar">
+                <img src="<?= asset('avatars/') . $user->avatar ?>" alt="avatar">
                 <i></i>
               </span>
               <span class="user-name"><?= $user->nom . ' ' . $user->prenom ?></span>
