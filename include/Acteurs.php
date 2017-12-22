@@ -63,7 +63,7 @@ class Client extends basedonner
             $p->remplire_PDO($line);
             $resultat_obj[] = $p;
         }
-        return resultat_obj;
+        return $resultat_obj;
     }
 
 }

@@ -66,5 +66,5 @@ VALUES
 
 
 
-INSERT INTO commandes (client_id, numero, projet, date_commande, date_livraison, client, contact, commentaire, statuts) VALUES (0, 'XXX', 'OCP', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa', 0);
-INSERT INTO commandes (client_id, numero, projet, date_commande, date_livraison, client, contact, commentaire, statuts) VALUES (0, 'XYY', 'FABLAB', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa', 1);
+INSERT INTO commandes (client_id, numero, projet, date_commande, date_livraison, client, contact, commentaire, statuts) VALUES (2, 'XXX', 'OCP', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa', 0);
+INSERT INTO commandes (client_id, numero, projet, date_commande, date_livraison, client, contact, commentaire, statuts) VALUES (2, 'XYY', 'FABLAB', '2017-12-10', '2017-12-11', 'PSA', 'bahaa', 'bahaa', 0);

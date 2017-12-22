@@ -93,7 +93,7 @@ function upload_image($image, $destination) {
 function pageProteger(){
     if(isset($_SESSION['estConnecter']) && $_SESSION['estConnecter'] && isset($_SESSION['user_id'])){
         if($_SESSION['is_client'])
-            dd('client');
+            header('Location:'. lien('/clients/index.php'));
 
         return Employers::trouver('id', $_SESSION['user_id']);
         

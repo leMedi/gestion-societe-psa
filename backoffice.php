@@ -21,8 +21,7 @@ $user = pageProteger();
 
     
     
-<div class="app-content content container-fluid" style="
-    margin-bottom: 300px;" >
+<div class="app-content content container-fluid" >
     <div class="content-wrapper">
         
   
