@@ -10,7 +10,6 @@ CREATE TABLE clients(
    address  VARCHAR (40)    NOT NULL,
    email    VARCHAR (100)   NOT NULL    CHECK (email LIKE '%_@__%.__%'),
    societe  VARCHAR (100)   NOT NULL,
-   password VARCHAR (30)    NOT NULL,
    avatar   VARCHAR (30)    NOT NULL    default 'avatar',
    PRIMARY KEY (id)
 );
@@ -45,8 +44,8 @@ CREATE TABLE commandes(
 );
 
 -- jeux données
-INSERT INTO clients (nom, prenom, tel, address, email, societe, password, avatar) VALUES ('ElHaij', 'Mehdi', 06004868, 'ENSA heda 3amala', 'mehdi@ensa.com', 'ENSA', 'hello', 'me.png');
-INSERT INTO clients (nom, prenom, tel, address, email, societe, password, avatar) VALUES ('ElYaacoubi', 'Achraf', 06112233, 'ENSA heda 3amala', 'achraf@ensa.com', 'ENSA', 'hello', 'achraf.jpg');
+INSERT INTO clients (nom, prenom, tel, address, email, societe, avatar) VALUES ('ElHaij', 'Mehdi', 06004868, 'ENSA heda 3amala', 'mehdi@ensa.com', 'ENSA', 'me.png');
+INSERT INTO clients (nom, prenom, tel, address, email, societe, avatar) VALUES ('ElYaacoubi', 'Achraf', 06112233, 'ENSA heda 3amala', 'achraf@ensa.com', 'ENSA', 'achraf.jpg');
 
 INSERT INTO employers
     (nom, prenom, tel, address, email, departement, est_chefdep, password, avatar)

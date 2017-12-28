@@ -36,9 +36,6 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="login/clients.php">login Client</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="login/staff.php">login Admin</a>
             </li>
           </ul>
@@ -53,8 +50,8 @@
           <div class="row">
             <div class="col-lg-8 mx-auto">
               <h1 class="brand-heading">Continantale</h1>
-              <p class="intro-text">A free, responsive, one page Bootstrap theme.
-                <br>Created by Start Bootstrap.</p>
+              <p class="intro-text">WELCOME
+                <br>Created by TEAM SPARK.</p>
             </div>
           </div>
         </div>
