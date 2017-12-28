@@ -52,9 +52,9 @@ $commandes = $user->commandes();
                 $counter = 0;
                 foreach ($commandes as $commande) {
                     if($commande->estProche())
-                        $counter++;
+                    $counter++;
                 }
-            ?>
+                ?>
 
             <div class="col-xl-3 col-lg-6 col-xs-12">
                 <div class="card bg-pink">

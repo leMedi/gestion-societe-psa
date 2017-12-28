@@ -41,7 +41,10 @@ class Client extends basedonner
 
     function __construct($donner = null)
     {
+                // dd(self::columns);
+
         Parent::__construct(self::table, self::columns);
+
 
         if($donner){
             $this->remplire($donner);

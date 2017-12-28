@@ -72,6 +72,7 @@ class BaseDonner
             $prop[$col] = ''; 
         }
 
+
         extract($prop);
 
         foreach ($this->columns as $col) {

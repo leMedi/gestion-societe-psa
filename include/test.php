@@ -1,17 +1,29 @@
 <?php
     require 'outils.php';
 
+
     // $c = new Client();
-    $c =  Client::trouver('nom', 'Saqi');
 
-    // dd(Client::exec('DELETE FROM clients where id = 1'));
-    // $r = Client::tous();
-    // $r = Client::trouver('id', 1);
+    // $c->email = "younes@saki.com";
+    // $c->nom = "Saki";
+    // $c->prenom = "younes";
+    // $c->tel = "51448";
+    // $c->address = "ghbnjk,";
+    // $c->societe = 'ensa';
+    // $c->password = "ayaw hadi";
+    // $c->avatar = "hello";
 
-    $c->societe = 'ENSA';
-    $c->password = 'ayaw hadi';
+    // $c->enregistrer();
+    // dd($c);
+
+    $c = Client::trouver('id', 3);
+
+    $c->email = "kelb@hemar.com";
 
     $c->enregistrer();
+
     dd($c);
+
+    
 
 ?>
