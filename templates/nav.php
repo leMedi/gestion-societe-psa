@@ -1,4 +1,4 @@
-
+ 
   <div class="navbar-wrapper">
     <div class="navbar-header">
       <ul class="nav navbar-nav">
@@ -55,34 +55,28 @@
         <ul class="nav navbar-nav float-xs-right">
           
           <!-- Notifications -->
-          <li class="dropdown dropdown-notification nav-item">
+          <?php $notifications = $user->notifications(); ?>
+          <li id="notif-btn" class="dropdown dropdown-notification nav-item">
             <a href="#" data-toggle="dropdown" class="nav-link nav-link-label">
               <i class="ficon icon-bell4"></i>
-              <span class="tag tag-pill tag-default tag-danger tag-default tag-up">5</span>
+              <?php if(count($notifications) != 0): ?>
+              <span id="circle" class="tag tag-pill tag-default tag-danger tag-default tag-up"><?= count($notifications);  ?></span>
+            <?php endif; ?>
             </a>
             <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
               <li class="dropdown-menu-header">
                 <h6 class="dropdown-header m-0">
                   <span class="grey darken-2">Notifications</span>
-                  <span class="notification-tag tag tag-default tag-danger float-xs-right m-0">5 New</span>
+                  <span class="notification-tag tag tag-default tag-danger float-xs-right m-0"><?= count($notifications);  ?> New</span>
                 </h6>
               </li>
-              <li class="list-group scrollable-container">
-                <a href="javascript:void(0)" class="list-group-item">
-                  <div class="media">
-                    <div class="media-left valign-middle">
-                      <i class="icon-cart3 icon-bg-circle bg-cyan"></i>
-                    </div>
-                    <div class="media-body">
-                      <h6 class="media-heading">You have new order!</h6>
-                      <p class="notification-text font-small-3 text-muted">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                      <small>
-                        <time datetime="2015-06-11T18:29:20+08:00" class="media-meta text-muted">30 minutes ago</time>
-                      </small>
-                    </div>
-                  </div>
-                </a>
-              </li>
+                <?php foreach ($notifications as $notif) {
+                template('notification', array(
+                  'title' => $notif->title,
+                  'body'  => $notif->body
+                ));
+                }
+                 ?> 
               <li class="dropdown-menu-footer">
                 <a href="javascript:void(0)" class="dropdown-item text-muted text-xs-center">Read all notifications</a>
               </li>
@@ -92,7 +86,7 @@
 
           <!-- User -->
           <li class="dropdown dropdown-user nav-item">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link">
+            <a id="bell" href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link">
               <span class="avatar avatar-online">
                 <img src="<?= asset('avatars/') . $user->avatar ?>" alt="avatar">
                 <i></i>
