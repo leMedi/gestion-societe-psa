@@ -23,5 +23,13 @@
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="<?= lien('/public/js/scripts/pages/dashboard-lite.js') ?>" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
+    <script type="text/javascript">
+        $('#notif-btn').click(function(){
+            console.log("hdh");
+            $('#circle').hide();
+            $.get("notification.php");
+        });
+            
+    </script>
   </body>
 </html>
