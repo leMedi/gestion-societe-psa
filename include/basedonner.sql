@@ -44,6 +44,17 @@ CREATE TABLE commandes(
    PRIMARY KEY (id)
 );
 
+CREATE TABLE notifications(
+   id                      int            NOT NULL     AUTO_INCREMENT,
+   employer_id             int            NOT NULL,
+   title                   varchar(10)    NOT NULL,
+   body                    varchar(50)    NOT NULL,
+   est_vue                 BOOLEAN        NOT NULL   default 0, 
+   
+   PRIMARY KEY (id)
+);
+
+
 -- jeux données
 INSERT INTO clients (nom, prenom, tel, address, email, societe, password, avatar) VALUES ('ElHaij', 'Mehdi', 06004868, 'ENSA heda 3amala', 'mehdi@ensa.com', 'ENSA', 'hello', 'me.png');
 INSERT INTO clients (nom, prenom, tel, address, email, societe, password, avatar) VALUES ('ElYaacoubi', 'Achraf', 06112233, 'ENSA heda 3amala', 'achraf@ensa.com', 'ENSA', 'hello', 'achraf.jpg');
@@ -68,3 +79,5 @@ VALUES
 
 INSERT INTO commandes (client_id, numero, projet, date_commande, date_livraison, contact, commentaire, statuts) VALUES (2, 'XXX', 'OCP', '2017-12-10', '2017-12-11', 'bahaa', 'bahaa', 1);
 INSERT INTO commandes (client_id, numero, projet, date_commande, date_livraison, contact, commentaire, statuts) VALUES (2, 'XYY', 'FABLAB', '2017-12-10', '2017-12-11', 'bahaa', 'bahaa', 1);
+INSERT INTO notifications (employer_id, title, body) VALUES (1, 'test1', 'OCP');
+INSERT INTO notifications (employer_id, title, body) VALUES (1, 'test2', 'KBM');
