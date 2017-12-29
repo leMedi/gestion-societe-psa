@@ -106,6 +106,22 @@ class Employers extends basedonner
         if($this->departement == 'Service Prototype')
             return Commande::tous('statuts', 3);
     }
+
+    function notifications(){
+        $stmt = $this->db->prepare("SELECT * FROM " . Notification::table . " WHERE employer_id = :id AND est_vue = 0 LIMIT 5");
+        $stmt->bindParam(':id', $this->id);
+        $stmt->execute();
+        
+        $resultat = $stmt->fetchAll();
+
+        $resultat_obj = array();
+        foreach ($resultat as $line) {
+            $p = new Notification();
+            $p->remplire_PDO($line);
+            $resultat_obj[] = $p;
+        }
+        return $resultat_obj;
+    }
     
 }
 
@@ -139,6 +155,22 @@ class Commande extends basedonner
     {
         $this->statuts = $this->statuts + 1;
         $this->enregistrer();
+    }
+}
+
+
+class Notification extends basedonner
+{
+    const table = 'notifications';
+    const columns = array('employer_id', 'title','body', 'est_vue');
+
+    function __construct($donner = null)
+    {
+        Parent::__construct(self::table, self::columns);
+
+        if($donner){
+            $this->remplire($donner);
+        }
     }
 }
 
